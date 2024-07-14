@@ -8,8 +8,8 @@ public class PrintWithSync {
     private static volatile boolean isBoolen=true;
 
     public static void main(String[] args) {
-        new Thread(PrintWithNotify::printNums).start();
-        new Thread(PrintWithNotify::printChar).start();
+        new Thread(()->printNums()).start();
+        new Thread(()->printChar()).start();
     }
     public static void printNums(){
         synchronized (lock){

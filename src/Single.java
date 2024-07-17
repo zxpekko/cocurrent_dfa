@@ -71,3 +71,25 @@ class LazyMan2{
         return instance;
     }
 }
+class Hungry2{
+    private Hungry2(){
+
+    }
+    private static Hungry2 instance=new Hungry2();
+    public static Hungry2 getInstance(){
+        return instance;
+    }
+}
+class LazyMan3{
+    private LazyMan3(){
+
+    }
+    private static LazyMan3 instance;
+    public static LazyMan3 getInstance(){
+        synchronized (LazyMan3.class){
+            if(instance==null)
+                instance=new LazyMan3();
+        }
+        return instance;
+    }
+}
